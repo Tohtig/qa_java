@@ -1,16 +1,18 @@
 package com.example;
 
 import org.junit.Test;
+
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class CatTest {
 
-    Feline feline = new Feline();
-    Cat cat;
+    private final Feline feline = new Feline();
+    private Cat cat;
 
     @Test
-    public void getSoundShouldMeow(){
+    public void getSoundShouldMeow() {
         cat = new Cat(feline);
         assertEquals("Мяу", cat.getSound());
     }

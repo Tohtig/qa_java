@@ -13,7 +13,14 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class LionDoesHaveManeTest {
 
-    @Parameterized.Parameters
+    private final String lionSex;
+    @Mock
+    Feline feline;
+    public LionDoesHaveManeTest(String lionSex) {
+        this.lionSex = lionSex;
+    }
+
+    @Parameterized.Parameters(name = "Тестовые данные: {0}")
     public static Object[][] setLionSex() {
         return new Object[][]{
                 {"Самец"},
@@ -22,18 +29,10 @@ public class LionDoesHaveManeTest {
         };
     }
 
-    @Mock
-    Feline feline;
-    private final String lionSex;
-
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
         Mockito.when(feline.getKittens()).thenReturn(1);
-    }
-
-    public LionDoesHaveManeTest(String lionSex) {
-        this.lionSex = lionSex;
     }
 
     @Test

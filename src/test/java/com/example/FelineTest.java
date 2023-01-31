@@ -1,15 +1,17 @@
 package com.example;
 
 import org.junit.Test;
+
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
 
-    Feline feline = new Feline();
+    private final Feline feline = new Feline();
 
     @Test
-    public void getFamilyIsFeeline(){
+    public void getFamilyIsFeeline() {
         assertEquals("Кошачьи", feline.getFamily());
     }
 
@@ -20,12 +22,12 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittensWithoutParametersWillBeSingle(){
+    public void getKittensWithoutParametersWillBeSingle() {
         assertEquals(1, feline.getKittens());
     }
 
     @Test
-    public void getKittensGivenTwoReturnTwo(){
+    public void getKittensGivenTwoReturnTwo() {
         assertEquals(2, feline.getKittens(2));
     }
 }
